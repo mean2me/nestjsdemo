@@ -11,7 +11,4 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-
-  @Get('/users/user/:id')
-  async getUser(@Param('id') id: string): Promise<UserDto> {}
 }
