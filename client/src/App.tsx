@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import UsersGrid from "./UsersGrid";
+import UsersGrid from "./components/grid/users/UsersGrid";
 
 function App() {
   return (

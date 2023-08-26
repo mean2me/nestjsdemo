@@ -1,0 +1,8 @@
+@use "../../shared" as *;
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+  border: 1px solid $gridBorderColor;
+  grid-template-columns: 1fr 1fr 1fr;
+}

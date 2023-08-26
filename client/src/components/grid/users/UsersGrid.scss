@@ -1,0 +1,19 @@
+@use "../../../shared" as *;
+
+.users {
+  display: flex;
+  margin: 0 auto;
+  align-items: flex-start;
+  padding: 2rem auto;
+
+  .grid {
+    display: grid;
+    gap: 0.5rem;
+    border: 1px solid $gridBorderColor;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    grid-template-rows: fit-content;
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: 2rem;
+  }
+}

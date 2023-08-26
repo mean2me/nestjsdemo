@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import Grid, { ColumnType } from "./Grid";
-import { UserDto } from "./types";
-import { fetchUsers } from "./lib/users.client";
+import Grid, { ColumnType } from "../Grid";
+import { UserDto } from "../../../types";
+import { fetchUsers } from "../../../lib/users.client";
+import "./UsersGrid.scss";
 
 const UsersGrid = () => {
   const [users, setUsers] = useState<UserDto[]>([]);
@@ -26,10 +27,16 @@ const UsersGrid = () => {
   ];
 
   useEffect(() => {
-    fetchUsers().then((resp) => setUsers(resp));
+    fetchUsers().then((resp) => {
+      setUsers(resp ? resp : []);
+    });
   }, []);
 
-  return <Grid data={users} columns={columns}></Grid>;
+  return (
+    <div className="users">
+      <Grid data={users} columns={columns}></Grid>
+    </div>
+  );
 };
 
 export default UsersGrid;
