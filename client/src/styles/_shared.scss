@@ -1,0 +1,16 @@
+$bgColor: rgba(0, 0, 0, 1);
+$gridBorderColor: #303030;
+$mainFontColor: #f0f0f0;
+
+$color-red: red;
+$color-green: green;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1200px;
+$breakpoint-tv: 1201px;
+
+body {
+  color: $mainFontColor;
+}

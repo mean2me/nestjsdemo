@@ -1,0 +1,10 @@
+@use "../../../styles/shared" as *;
+
+.users-filter {
+  label {
+    display: flex;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+}

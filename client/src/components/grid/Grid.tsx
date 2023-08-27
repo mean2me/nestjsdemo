@@ -4,6 +4,8 @@ import "./Grid.scss";
 export type ColumnType<T, K extends keyof T> = {
   key: K;
   header: string;
+  formatter?: (value: T) => string;
+  classNames?: (value: T) => string;
 };
 
 export type GridProps<T, K extends keyof T> = {
@@ -23,11 +25,18 @@ const Grid = <T, K extends keyof T>({ data, columns }: GridProps<T, K>) => {
       {items &&
         items.map((item, index) => {
           return (
-            <>
-              {columns?.map(({ key }, colIdx) => (
-                <div key={`col-${colIdx}`}>{item[key] as string}</div>
+            <div style={{ display: "contents" }} key={`grid-item-${index}`}>
+              {columns?.map(({ key, formatter, classNames }, colIdx) => (
+                <div
+                  key={`col-${colIdx}`}
+                  className={`row-field ${classNames ? classNames(item) : ""}`}
+                >
+                  {formatter
+                    ? (formatter(item) as string)
+                    : (item[key] as string)}
+                </div>
               ))}
-            </>
+            </div>
           );
         })}
     </div>

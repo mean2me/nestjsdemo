@@ -17,6 +17,11 @@ export class UsersService {
     return await this.userRepository.create(createUserDto);
   }
 
+  async findEnabled(enabled: boolean) {
+    const r = await this.userRepository.find({ where: { enabled } });
+    return r;
+  }
+
   async findAll() {
     return await this.userRepository.findAndCount();
   }
